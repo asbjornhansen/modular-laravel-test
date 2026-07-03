@@ -2,10 +2,10 @@
 
 namespace Enburn\CarRegistry\Models;
 
+use Enburn\CarRegistry\Database\Factories\VehicleFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Query\Builder;
 
 class Vehicle extends Model
 {
@@ -13,6 +13,11 @@ class Vehicle extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+
+    protected static function newFactory()
+    {
+        return VehicleFactory::new();
+    }
 
     public function brand()
     {

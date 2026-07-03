@@ -12,7 +12,7 @@ class VehicleModelTest extends TestCase
     {
         parent::setUp();
 
-        $this->vehicleModels = VehicleModelFactory::new()->times(3)->make();
+        $this->vehicleModels = VehicleModel::factory()->count(3)->make();
     }
 
     public function testCanCreateVehicleModel()

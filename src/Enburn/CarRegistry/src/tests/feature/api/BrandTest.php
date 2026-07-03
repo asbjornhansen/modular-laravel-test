@@ -11,7 +11,7 @@ class BrandTest extends TestCase
     {
         parent::setUp();
 
-        $this->brands = BrandFactory::new()->times(3)->make();
+        $this->brands = Brand::factory()->count(3)->make();
 
     }
 

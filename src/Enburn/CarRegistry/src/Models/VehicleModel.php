@@ -2,6 +2,7 @@
 
 namespace Enburn\CarRegistry\Models;
 
+use Enburn\CarRegistry\Database\Factories\VehicleModelFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -17,6 +18,11 @@ class VehicleModel extends Model
         'fuel_type',
         'brand_id',
     ];
+
+    protected static function newFactory()
+    {
+        return VehicleModelFactory::new();
+    }
 
     public function brand()
     {
